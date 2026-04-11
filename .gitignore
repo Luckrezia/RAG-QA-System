@@ -1,0 +1,8 @@
+# Chroma向量数据库文件 
+chroma_db/ 
+md5.text 
+chat_history/ 
+data/ 
+__pycache__/ 
+*.pyc 
+.env 
