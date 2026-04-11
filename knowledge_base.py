@@ -11,9 +11,8 @@ from datetime import datetime
 
 
 def check_md5(md5_str: str):
-    """检查传入md5字符串是否被处理过了
-        return False表述未处理过，return True表述处理过
-    """
+    # 检查传入md5字符串是否被处理过了
+
     if not os.path.exists(config.md5_path):
         open(config.md5_path, 'w', encoding='utf-8').close()
         return False
@@ -26,13 +25,13 @@ def check_md5(md5_str: str):
 
 
 def save_md5(md5_str: str):
-    """将传入的md5字符串，记录到文件中保存"""
+    # 将传入的md5字符串，记录到文件中保存
     with open(config.md5_path, 'a', encoding='utf-8') as f:
         f.write(md5_str + '\n')
 
 
 def get_string_md5(input_str: str, encoding='utf-8'):
-    """将传入的字符串转化为md5字符串"""
+    # 将传入的字符串转化为md5字符串
     str_bytes = input_str.encode(encoding=encoding)
     md5_obj = hashlib.md5()
     md5_obj.update(str_bytes)
@@ -56,7 +55,7 @@ class KnowledgeBaseService(object):
         )
 
     def upload_by_str(self, data: str, filename):
-        """将传入的字符串，进行向量化，存入向量数据库中"""
+        # 将传入的字符串，进行向量化，存入向量数据库中
         md5_hex = get_string_md5(data)
 
         if check_md5(md5_hex):
@@ -83,7 +82,7 @@ class KnowledgeBaseService(object):
         return "[成功]内容已经成功载入向量库"
 
     def get_file_list(self):
-        """获取所有已上传文件的列表"""
+        # 获取所有已上传文件的列表
         try:
             all_docs = self.chroma.get()
             file_set = set()
@@ -98,7 +97,7 @@ class KnowledgeBaseService(object):
             return []
 
     def delete_by_filename(self, filename: str):
-        """根据文件名删除向量库中的文档，并删除对应的MD5记录"""
+        # 根据文件名删除向量库中的文档，并删除对应的MD5记录
         try:
             all_docs = self.chroma.get()
 
@@ -129,7 +128,7 @@ class KnowledgeBaseService(object):
             return f"[错误] 删除失败: {str(e)}"
 
     def _remove_md5_records(self, md5s_to_delete: set):
-        """从md5文件中删除指定的MD5记录"""
+        # 从md5文件中删除指定的MD5记录
         if not md5s_to_delete:
             return
 

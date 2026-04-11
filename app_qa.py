@@ -4,11 +4,11 @@ from rag import RagService
 import config_data as config
 
 #title
-st.title("智能客服")
+st.title("神人Q&A")
 st.divider()
 
 if "message" not in st.session_state:
-    st.session_state["message"] = [{"role": "assistant", "content": "你好,有什么能帮你"}]
+    st.session_state["message"] = [{"role": "assistant", "content": "?你有事"}]
 
 if "rag" not in st.session_state:
     st.session_state["rag"] = RagService()
@@ -24,7 +24,7 @@ if prompt:
     st.chat_message("user").write(prompt)
     st.session_state["message"].append({"role": "user", "content": prompt})
 
-    with st.spinner("AI思考中..."):
+    with st.spinner("神人思考中..."):
         history_text = ""
         res_stream = st.session_state["rag"].chain.stream({"input": prompt}, config.session_config)
         res = st.chat_message("assistant").write_stream(res_stream)

@@ -23,10 +23,6 @@ class FileChatMessagesHistory(BaseChatMessageHistory):
         all_messages = list(self.messages)
         all_messages.extend(messages)
 
-        #将数据同步到本地文件中
-        #类对象写入文件-》一堆二进制
-        #为了方便，将BaseMessage转为字典存入json中
-        #官方提供message_to_dict，实现单个对象转字典
 
         new_messages = [message_to_dict(messages) for messages in all_messages]
         #将数据写入文件
