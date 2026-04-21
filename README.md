@@ -43,13 +43,15 @@ pip install -r requirements.txt
 ```
 
 ### 3. Set up API Key
-```
 # Linux/Mac
+```
 export DASHSCOPE_API_KEY="your-api-key"
-
+```
 # Windows
+```
 set DASHSCOPE_API_KEY="your-api-key"
 ```
+
 ### 4. Run the application
 File Upload Interface:
 ```
@@ -75,5 +77,7 @@ persist_directory: Vector database storage path
 
 ### Notes
 Requires a valid Tongyi Qianwen API key
+
 Vector database files are stored in ./chroma_db/
+
 Chat history is stored in ./chat_history/
