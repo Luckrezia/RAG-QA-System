@@ -19,6 +19,7 @@ A RAG-based intelligent question answering system built with LangChain, Chroma, 
 - **Web UI**: Streamlit
 
 ## 📁 Project Structure
+
 ├── app_file_uploader.py # File upload management interface
 ├── app_qa.py # Q&A interface
 ├── config_data.py # Configuration file
