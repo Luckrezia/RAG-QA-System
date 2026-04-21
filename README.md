@@ -2,15 +2,15 @@
 
 A RAG-based intelligent question answering system built with LangChain, Chroma, and Tongyi Qianwen.
 
-## ✨ Features
+##  Features
 
-- 📁 **Knowledge Base Management**: Upload TXT files for automatic vectorization and storage
-- 🔍 **Intelligent Retrieval**: Document retrieval based on vector similarity
-- 💬 **Conversation Memory**: Multi-turn dialogue support with context retention
-- 🎨 **Web Interface**: User-friendly interface built with Streamlit
-- 🗑️ **File Management**: View and delete uploaded files
+-  **Knowledge Base Management**: Upload TXT files for automatic vectorization and storage
+-  **Intelligent Retrieval**: Document retrieval based on vector similarity
+-  **Conversation Memory**: Multi-turn dialogue support with context retention
+-  **Web Interface**: User-friendly interface built with Streamlit
+-  **File Management**: View and delete uploaded files
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Framework**: LangChain
 - **Vector Database**: Chroma
@@ -18,19 +18,27 @@ A RAG-based intelligent question answering system built with LangChain, Chroma, 
 - **Chat Model**: Tongyi Qianwen qwen3-max
 - **Web UI**: Streamlit
 
-## 📁 Project Structure
+##  Project Structure
 
 ├── app_file_uploader.py # File upload management interface
+
 ├── app_qa.py # Q&A interface
+
 ├── config_data.py # Configuration file
+
 ├── file_history_store.py # Chat history storage
+
 ├── knowledge_base.py # Knowledge base core logic
+
 ├── rag.py # RAG service
+
 ├── vector_stores.py # Vector storage service
+
 ├── requirements.txt # Dependencies
+
 └── README.md # Documentation
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### 1. Clone the repository
 ```bash
